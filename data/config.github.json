@@ -8,38 +8,15 @@
     "temperature": 0.3,
     "max_tokens": 8192,
     "throttle_sec": 1,
-    "languages": [
-      "zh",
-      "en"
-    ],
+    "languages": ["zh", "en"],
     "analysis_concurrency": 5,
     "enrichment_concurrency": 5
   },
   "sources": {
     "github": [
-      {
-        "type": "user_events",
-        "username": "karpathy",
-        "enabled": true
-      },
-      {
-        "type": "repo_releases",
-        "owner": "vllm-project",
-        "repo": "vllm",
-        "enabled": true
-      },
-      {
-        "type": "repo_releases",
-        "owner": "sgl-project",
-        "repo": "sglang",
-        "enabled": true
-      },
-      {
-        "type": "repo_releases",
-        "owner": "triton-lang",
-        "repo": "triton",
-        "enabled": true
-      }
+      { "type": "repo_releases", "owner": "camel-ai", "repo": "oasis", "enabled": true },
+      { "type": "repo_releases", "owner": "Thysrael", "repo": "Horizon", "enabled": true },
+      { "type": "repo_releases", "owner": "getzep", "repo": "graphiti", "enabled": true }
     ],
     "hackernews": {
       "enabled": true,
@@ -48,103 +25,108 @@
     },
     "rss": [
       {
-        "name": "Simon Willison",
-        "url": "https://simonwillison.net/atom/everything/",
+        "name": "GoogleNews-DTC电商",
+        "url": "https://news.google.com/rss/search?q=%22DTC%22%20ecommerce%20OR%20%22direct%20to%20consumer%22%20brand&hl=en-US&gl=US&ceid=US:en",
         "enabled": true,
-        "category": "ai-tools"
+        "category": "dtc"
       },
       {
-        "name": "GitHub Trending - Daily",
-        "url": "https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml",
+        "name": "GoogleNews-宠物科技",
+        "url": "https://news.google.com/rss/search?q=%22pet%20tech%22%20OR%20%22pet%20wearable%22%20OR%20%22pet%20GPS%22&hl=en-US&gl=US&ceid=US:en",
         "enabled": true,
-        "category": "github-trending"
+        "category": "pet-tech"
       },
       {
-        "name": "Semianalysis",
-        "url": "https://newsletter.semianalysis.com/feed",
+        "name": "GoogleNews-中东电商",
+        "url": "https://news.google.com/rss/search?q=Saudi%20Arabia%20ecommerce%20OR%20UAE%20ecommerce%20OR%20Gulf%20ecommerce&hl=en-US&gl=US&ceid=US:en",
         "enabled": true,
-        "category": "semiconductors"
+        "category": "mena"
       },
       {
-        "name": "LWN.net",
-        "url": "https://lwn.net/headlines/full_text?key=${LWN_KEY}",
+        "name": "GoogleNews-香氛美妆",
+        "url": "https://news.google.com/rss/search?q=%22halal%20beauty%22%20OR%20%22home%20fragrance%22%20market%20OR%20%22beauty%20device%22&hl=en-US&gl=US&ceid=US:en",
         "enabled": true,
-        "category": "linux-kernel"
+        "category": "fragrance-beauty"
+      },
+      {
+        "name": "GoogleNews-睡眠经济",
+        "url": "https://news.google.com/rss/search?q=%22sleep%20tech%22%20OR%20%22sleep%20economy%22%20OR%20%22smart%20sleep%22&hl=en-US&gl=US&ceid=US:en",
+        "enabled": true,
+        "category": "sleep-tech"
+      },
+      {
+        "name": "GoogleNews-欧盟监管",
+        "url": "https://news.google.com/rss/search?q=EU%20%22AI%20Act%22%20OR%20GPSR%20OR%20%22Digital%20Services%20Act%22%20enforcement&hl=en-US&gl=US&ceid=US:en",
+        "enabled": true,
+        "category": "policy"
+      },
+      {
+        "name": "GoogleNews-跨境电商(中文)",
+        "url": "https://news.google.com/rss/search?q=%E8%B7%A8%E5%A2%83%E7%94%B5%E5%95%86%20%E5%87%BA%E6%B5%B7%20%E7%8B%AC%E7%AB%8B%E7%AB%99&hl=zh-CN&gl=CN&ceid=CN:zh-Hans",
+        "enabled": true,
+        "category": "dtc"
+      },
+      {
+        "name": "TechCrunch",
+        "url": "https://techcrunch.com/feed/",
+        "enabled": true,
+        "category": "tech"
+      },
+      {
+        "name": "e27-东南亚创投",
+        "url": "https://e27.co/feed/",
+        "enabled": true,
+        "category": "sea"
+      },
+      {
+        "name": "TechNode-Global",
+        "url": "https://technode.global/feed/",
+        "enabled": true,
+        "category": "sea"
+      },
+      {
+        "name": "FTC-Press",
+        "url": "https://www.ftc.gov/feeds/news/press-releases",
+        "enabled": true,
+        "category": "policy"
+      },
+      {
+        "name": "FederalRegister",
+        "url": "https://www.federalregister.gov/documents/current_issue.rss",
+        "enabled": true,
+        "category": "policy"
       }
     ],
     "reddit": {
       "enabled": true,
       "subreddits": [
-        {
-          "subreddit": "MachineLearning",
-          "enabled": true,
-          "sort": "hot",
-          "time_filter": "day",
-          "fetch_limit": 10,
-          "min_score": 60
-        },
-        {
-          "subreddit": "LocalLLaMA",
-          "enabled": true,
-          "sort": "hot",
-          "time_filter": "day",
-          "fetch_limit": 10,
-          "min_score": 60
-        }
+        { "subreddit": "ecommerce", "enabled": true, "sort": "hot", "time_filter": "day", "fetch_limit": 10, "min_score": 30 },
+        { "subreddit": "shopify", "enabled": true, "sort": "hot", "time_filter": "day", "fetch_limit": 10, "min_score": 20 },
+        { "subreddit": "Entrepreneur", "enabled": true, "sort": "hot", "time_filter": "day", "fetch_limit": 10, "min_score": 50 }
       ],
       "users": [],
-      "fetch_comments": 10
+      "fetch_comments": 5
     },
     "telegram": {
-      "enabled": true,
-      "channels": [
-        {
-          "channel": "zaihuapd",
-          "enabled": true,
-          "fetch_limit": 20
-        }
-      ]
+      "enabled": false,
+      "channels": []
     }
   },
   "filtering": {
-    "ai_score_threshold": 8.0,
-    "time_window_hours": 24
+    "ai_score_threshold": 6.0,
+    "time_window_hours": 24,
+    "max_items": 25
   },
   "webhook": {
-    "enabled": true,
+    "enabled": false,
     "url_env": "HORIZON_WEBHOOK_URL",
     "delivery": "summary_and_items",
     "overview_position": "last",
     "platform": "feishu",
     "layout": "collapsible",
     "fallback_layout": "markdown",
-    "languages": [
-      "zh"
-    ],
-    "request_body": {
-      "msg_type": "interactive",
-      "card": {
-        "schema": "2.0",
-        "config": {
-          "wide_screen_mode": true
-        },
-        "header": {
-          "title": {
-            "tag": "plain_text",
-            "content": "#{message_title}"
-          },
-          "template": "blue"
-        },
-        "body": {
-          "elements": [
-            {
-              "tag": "markdown",
-              "content": "#{summary}"
-            }
-          ]
-        }
-      }
-    },
+    "languages": ["zh"],
+    "request_body": {},
     "headers": ""
   }
 }
