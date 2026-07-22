@@ -20,8 +20,8 @@
     ],
     "hackernews": {
       "enabled": true,
-      "fetch_top_stories": 30,
-      "min_score": 150
+      "fetch_top_stories": 20,
+      "min_score": 250
     },
     "rss": [
       {
@@ -67,10 +67,10 @@
         "category": "dtc"
       },
       {
-        "name": "TechCrunch",
-        "url": "https://techcrunch.com/feed/",
+        "name": "TechCrunch-Ecommerce",
+        "url": "https://techcrunch.com/category/ecommerce/feed/",
         "enabled": true,
-        "category": "tech"
+        "category": "dtc"
       },
       {
         "name": "e27-东南亚创投",
@@ -115,7 +115,19 @@
   "filtering": {
     "ai_score_threshold": 6.0,
     "time_window_hours": 24,
-    "max_items": 25
+    "max_items": 25,
+    "category_groups": {
+      "market": {
+        "limit": 12,
+        "categories": ["dtc", "pet-tech", "mena", "fragrance-beauty", "sleep-tech", "sea"]
+      },
+      "policy": {
+        "limit": 5,
+        "categories": ["policy"]
+      }
+    },
+    "default_group": "other",
+    "default_group_limit": 8
   },
   "webhook": {
     "enabled": false,
